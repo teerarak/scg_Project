@@ -3,8 +3,8 @@
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
-        // $password = md5($_POST['password']);
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
+        // $password = $_POST['password'];
         $sql_username = ' SELECT * FROM employee WHERE Username = "'.$username.'" AND Password = "'.$password.'" ';
         $query_username = $connect->query($sql_username);
         if ($result_username = $query_username->fetch_assoc()){
