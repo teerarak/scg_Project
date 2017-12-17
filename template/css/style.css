@@ -1,0 +1,26 @@
+.navbar-brand{
+  padding: 0px!important;
+}
+.inputoonoon{
+  width:150%!important;
+}
+.container{
+
+}
+.userTable{
+  overflow-x: scroll;
+}
+.userpanel{
+  margin: 0px;
+  padding: 5px;
+  background-color: #eff0f2;
+}
+.userpanel .profile{
+  padding: 50px;
+  margin-bottom: 20px;
+
+}
+.userpanel .table td:not(.profile){
+  padding: .30rem;
+  border:0px!important;
+}
