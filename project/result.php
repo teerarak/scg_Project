@@ -2,10 +2,10 @@
    $id_project = $_GET['Project_ID'];
    $sql_select_result = ' SELECT * FROM result
                           INNER JOIN moc ON result.Choice_ID = moc.Choice_ID
-                          INNER JOIN choice ON moc.Choice_ID = choice.Choice_ID
                           INNER JOIN employee ON employee.User_ID = moc.MOC_Approve_ID
-                          WHERE result.Project_ID = "'.$id_project.'" ';
+                          WHERE result.Project_ID = "'.$id_project.'"'.' AND moc.Project_ID = "'.$id_project.'" ';
    $query_select_result = $connect->query($sql_select_result);
+  //  echo "$sql_select_result";
    $sql_select_project = ' SELECT * FROM project_detail WHERE Project_ID = "'.$id_project.'" ';
    $query_select_project = $connect->query($sql_select_project);
    $result_project = $query_select_project->fetch_assoc();
@@ -32,6 +32,7 @@
         </tr>
           <?php
             $sql_detail = "SELECT * FROM project_detail WHERE Project_ID = '$id_project' ORDER BY Project_detail_ID DESC";
+            // echo "$sql_detail";
             $query_select_detail = $connect->query($sql_detail);
             $i = 0;
             while($result_detail = $query_select_detail->fetch_assoc()){
@@ -179,9 +180,8 @@
             <?php
               $sql_moc = "SELECT * FROM moc m
                           JOIN result r ON r.Choice_ID = m.Choice_ID
-                          JOIN choice c ON m.Choice_ID = c.Choice_ID
                           JOIN employee e ON m.MOC_Approve_ID = e.User_ID
-                          WHERE r.Project_ID = '$id_project'";
+                          WHERE r.Project_ID = '$id_project' AND m.Project_ID = '$id_project'";
               $query_moc = $connect->query($sql_moc);
               while ($result_moc = $query_moc->fetch_assoc()) {
              ?>
@@ -208,6 +208,7 @@
              $sql_moc = "SELECT * FROM approve a
                          JOIN employee e ON a.Approve_User_ID = e.User_ID
                          WHERE a.Project_ID = '$id_project'AND e.Status != 'MOC'";
+                        //  echo "$sql_moc";
              $query_moc = $connect->query($sql_moc);
              while ($result_moc = $query_moc->fetch_assoc()) {
             ?>
