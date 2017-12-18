@@ -101,6 +101,7 @@
     <div class="detail mb-5">
         <h4 class="mt-4">รายละเอียดโครงการ</h4> <br>
         <div class="form-group">
+          <label style="color:red;margin-left:30px;">*</label>
           <label for="date">วันที่ดำเนินการ</label>
           <div class="row">
             <div class="col">
@@ -112,26 +113,32 @@
           </div>
         </div>
         <div class="form-group">
+          <label style="color:red;margin-left:30px;">*</label>
           <label for="Project_Process">Process ที่ต้องการเปลี่ยน</label>
           <input type="text" name="Project_Process" class="form-control" placeholder="กรอกข้อมูล" required>
         </div>
         <div class="form-group">
+          <label style="color:red;margin-left:30px;">*</label>
           <label for="Project_Machine">เครื่องจักรที่ต้องการเปลี่ยน</label>
           <input type="text" name="Project_Machine" class="form-control" placeholder="กรอกข้อมูล" required>
         </div>
         <div class="form-group">
+          <label style="color:red;margin-left:30px;">*</label>
           <label for="Project_Place">สถานที่เปลี่ยน</label>
           <input type="text" name="Project_Place" class="form-control" placeholder="กรอกข้อมูล" required>
         </div>
         <div class="form-group">
+          <label style="color:red;margin-left:30px;">*</label>
           <label for="Project_Reason">เหตุที่ขอในการเปลี่ยนแปลง</label>
           <input type="text" name="Project_Reason" class="form-control" placeholder="กรอกข้อมูล" required>
         </div>
         <div class="form-group">
+          <label style="color:red;margin-left:30px;">*</label>
           <label for="Project_Howto">วิธีการเปลี่ยนแปลง</label>
           <input type="text" name="Project_Howto" class="form-control" placeholder="กรอกข้อมูล" required>
         </div>
         <div class="form-group">
+          <label></label>
           <label for="Project_Howto" class="mr-4">การประเมินความเสี่ยงและสิ่งแวดล้อม</label>
             <input type="radio" name="Project_Risk" class="" value="ยอมรับได้" required> ยอมรับได้
             <input type="radio" name="Project_Risk" class="" value="ปานกลาง" required> ปานกลาง

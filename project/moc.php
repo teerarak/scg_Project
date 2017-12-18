@@ -119,33 +119,19 @@
              while ($result_moc = $query_select_moc->fetch_assoc()) {
              ?>
               <?php if ($i == 0): ?>
-                <?php if ($result_moc['Name'] == 'ฐานวัฒน์ อัศวโชคอนันท์'): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>" ><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php elseif ($i == 1): ?>
-                <?php if ($result_moc['Name'] == 'บัณฑูร ฝึกความดี' || $result_moc['Name'] == 'ชวลิต นันทไตรทิพย์' ): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>"><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php elseif ($i == 2): ?>
-                <?php if ($result_moc['Name'] == 'เกรียงศักดิ์ ฉุนชื่นจิตต์' || $result_moc['Name'] == 'เอกชัย งามพิทักษ์จิตต์'): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>"><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php elseif ($i == 3): ?>
-                <?php if ($result_moc['Name'] == 'รุ่งโรจน์ พูลพานิชอุปถัมย์'): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>"><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php elseif ($i == 4): ?>
-                <?php if ($result_moc['Name'] == 'จุฑามาศ จิตต์ชื่น'): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>"><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php elseif ($i == 5): ?>
-                <?php if ($result_moc['Name'] == 'ประทีป โยปินตา'): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>"><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php elseif ($i == 6): ?>
-                <?php if ($result_moc['Name'] == 'ภานุวัฒน์  คำใสย'): ?>
                   <option value="<?php echo $result_moc['User_ID']; ?>"><?php echo $result_moc['Name']; ?></option>
-                <?php endif; ?>
               <?php endif; ?>
              <?php } ?>
         </select>
