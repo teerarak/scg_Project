@@ -155,11 +155,16 @@
         <table class="table">
             <?php
             $i = 0;
+            $name_approver = [
+              'ผู้อนุมัติเบื้องต้น',
+              'ผู้อนุมัติในหลักการ',
+              'ผู้อนุมัติPSSR'
+            ];
              while ($result_select_approve = $query_select_approve->fetch_assoc()) {
                  $i++;
              ?>
             <tr>
-                <td style="width:30%;">ผู้อนุมัติโครงการคนที่ <?php echo $i; ?> </td>
+                <td style="width:30%;"><?php echo $name_approver[$i-1]; ?> </td>
 
                 <td><?php echo $result_select_approve['Name']; ?></td>
             </tr>
@@ -220,7 +225,7 @@
                <td>
                  <?php if ($result_moc['Status_ID'] == 6): ?>
                      <h5 class="text-danger">ไม่อนุมัติ</h5>
-                <?php elseif ($result_moc['Status_ID'] > 5): ?>
+                <?php elseif ($result_moc['Status_ID'] == 8): ?>
                      <h5 class="text-success">อนุมัติแล้ว</h5>
                  <?php else: ?>
                      <h5 class="text-warning">ยังไม่อนุมัติ</h5>

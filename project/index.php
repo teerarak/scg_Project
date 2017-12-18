@@ -83,11 +83,12 @@
         <td><a href="?Project_ID=<?php echo $Project_ID; ?>&menu=DetailProject" class="btn btn-primary">ดูข้อมูล</a></td>
         <td>
           <?php if($result_project['Status_ID'] == '1' || $result_project['Status_ID'] == '6') : ?>
-            <a href="?Project_ID=<?php echo $Project_ID; ?>&menu=updateStatus&Status=2"
+            <a href="?menu=addproject&Project_ID=<?php echo $Project_ID; ?>"
               class="btn btn-primary">
               ส่งโครงการ
             </a>
           <?php else: ?>
+            <!-- <a href="?menu=addproject&Project_ID=<?php echo $Project_ID;?>"></a> -->
             <button  name="" class="btn edit" data-toggle="modal"  data-target="#edit" disabled>
               ส่งโครงการ
             </button>

@@ -107,9 +107,9 @@
         <td><?php echo $start_project[$i]; ?></td>
         <td><input type="radio" name="result<?php echo $i; ?>" value="มีผล"  class="form-control" required onclick="Set('<?php echo $i ?>')"></td>
         <td><input type="radio" name="result<?php echo $i; ?>" value="ไม่มีผล" class="form-control" required onclick="notSet('<?php echo $i ?>')"></td>
-        <td><input type="text" name="benefit[]" id="notb<?php echo $i ?>" class="form-control" required></td>
-        <td><input type="text" name="effect[]" id="note<?php echo $i ?>" class="form-control" required></td>
-        <td><input type="text" name="modify[]" id="notm<?php echo $i ?>" class="form-control" required></td>
+        <td><input type="text" name="benefit[]" id="notb<?php echo $i ?>" class="form-control" ></td>
+        <td><input type="text" name="effect[]" id="note<?php echo $i ?>" class="form-control" ></td>
+        <td><input type="text" name="modify[]" id="notm<?php echo $i ?>" class="form-control" ></td>
         <td>
         <select class="form-control" name="select_user[]"required>
           <option value="" disabled selected>เลือก MOC</option>
@@ -145,13 +145,20 @@
         <?php
           }
         ?>
+        <?php
+        $name_approver = [
+          'ผู้อนุมัติเบื้องต้น',
+          'ผู้อนุมัติในหลักการ',
+          'ผู้อนุมัติPSSR'
+        ];
+         ?>
         <?php for ($i = 0; $i < 3 ; $i++): ?>
           <tr>
             <?php
               $select_app = 'SELECT * FROM employee WHERE Status = "Approve" OR Status = "Manager"';
               $query_select_app = $connect->query($select_app);
              ?>
-            <td colspan="3">ผู้อนุมัติโครงการคนที่ <?php echo ($i+1); ?> : </td>
+            <td colspan="3"><?php echo $name_approver[$i] ?> : </td>
             <td colspan="4">
               <select name="select_approve[]" required class="form-control">
                 <option value="" disabled selected>เลือกผู้อนุมัติโครงการ</option>
